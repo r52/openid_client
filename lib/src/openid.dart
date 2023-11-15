@@ -614,6 +614,7 @@ class Flow {
           'password': password,
           'scope': scopes.join(' '),
           'client_id': client.clientId,
+          if (client.clientSecret != null) 'client_secret': client.clientSecret,
         },
         client: client.httpClient);
     return Credential._(client, TokenResponse.fromJson(json), null);
